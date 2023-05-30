@@ -11,6 +11,7 @@ public class Main {
         String[] productName = {"Bread", "Apple", "Milk", "Pineapple", "Heroin"};
         int[] price = {48, 77, 89, 350, 500};
         Basket basket1 = new Basket(productName, price);
+        ClientLog clientLog = new ClientLog();
 
         while (true) {
             System.out.println("List of possible items to buy");
@@ -29,14 +30,17 @@ public class Main {
                 basket1.printCart();
                 break;
             }
-
+            clientLog.log(productNumber, productCounter);
+            ClientLog.showArray();
             basket1.addToCart(Integer.parseInt(productNumber)-1, Integer.parseInt(productCounter));
         }
-        File file = new File("basket1.txt");
-        basket1.saveTxt(file);
-        Basket.loadFromTxtFile(file);
-        File file1 = new File("basket2.bin");
-        Basket.saveBin(file);
+
+        File theFile = new File("basket1.cvs");
+        clientLog.exportAsCVS(theFile);
+//        basket1.saveTxt(theFile);
+//        Basket.loadFromTxtFile(file);
+//        File file1 = new File("basket2.bin");
+//        Basket.saveBin(file);
     }
 
     private static void showStoreProducts(String[] strings, int[] price) {
