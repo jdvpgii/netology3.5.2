@@ -31,16 +31,11 @@ public class Main {
                 break;
             }
             clientLog.log(productNumber, productCounter);
-            ClientLog.showArray();
             basket1.addToCart(Integer.parseInt(productNumber)-1, Integer.parseInt(productCounter));
         }
 
-        File theFile = new File("basket1.cvs");
+        File theFile = new File("log.cvs");
         clientLog.exportAsCVS(theFile);
-//        basket1.saveTxt(theFile);
-//        Basket.loadFromTxtFile(file);
-//        File file1 = new File("basket2.bin");
-//        Basket.saveBin(file);
     }
 
     private static void showStoreProducts(String[] strings, int[] price) {
