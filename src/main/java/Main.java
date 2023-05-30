@@ -35,8 +35,9 @@ public class Main {
             basket1.addToCart(Integer.parseInt(productNumber)-1, Integer.parseInt(productCounter));
         }
 
-        File theFile = new File("basket1.txt");
-        basket1.saveTxt(theFile);
+        File theFile = new File("basket1.cvs");
+        clientLog.exportAsCVS(theFile);
+//        basket1.saveTxt(theFile);
 //        Basket.loadFromTxtFile(file);
 //        File file1 = new File("basket2.bin");
 //        Basket.saveBin(file);
