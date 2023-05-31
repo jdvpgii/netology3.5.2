@@ -17,6 +17,30 @@ public class Basket {
         this.counterOfEachItem = counterOfEachItem;
     }
 
+    public String[] getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String[] productName) {
+        this.productName = productName;
+    }
+
+    public int[] getPrice() {
+        return price;
+    }
+
+    public void setPrice(int[] price) {
+        this.price = price;
+    }
+
+    public int[] getCounterOfEachItem() {
+        return counterOfEachItem;
+    }
+
+    public void setCounterOfEachItem(int[] counterOfEachItem) {
+        this.counterOfEachItem = counterOfEachItem;
+    }
+
     protected void addToCart(int productNum, int amount) {
         counterOfEachItem[productNum] += amount;
     }
